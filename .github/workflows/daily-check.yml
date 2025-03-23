@@ -1,0 +1,38 @@
+name: Daily Birthday Check
+
+on:
+  schedule:
+    # 每天早上8点运行 (UTC时间，对应北京时间16点)
+    - cron: '0 0 * * *'
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  check-birthdays:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        timeout-minutes: 1
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+        timeout-minutes: 1
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        timeout-minutes: 2
+      
+      - name: Run birthday check
+        env:
+          EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          EMAIL_RECIPIENT: ${{ secrets.EMAIL_RECIPIENT }}
+        run: |
+          python birthday_reminder.py check "$EMAIL_RECIPIENT"
+        timeout-minutes: 2 
