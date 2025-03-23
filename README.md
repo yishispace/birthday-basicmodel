@@ -29,7 +29,7 @@
 
 3. **导入本项目代码**：
    - 在新创建的仓库页面中，点击"Import code"按钮
-   - 在"Your old repository's clone URL"中输入：`https://github.com/pufeng-yi/birthday-basicmodel.git`（请替换为实际仓库地址）
+   - 在"Your old repository's clone URL"中输入：`https://github.com/pufeng-yi/birthday-basicmodel.git`
    - 点击"Begin import"，等待导入完成
 
 ### 二、配置邮箱和密钥（保证能发送邮件）
