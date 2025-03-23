@@ -9,7 +9,7 @@
     {
       "name": "李四",
       "date": "1992-04-25",
-      "is_lunar": true,
+      "is_lunar": false,
       "advance_days":50
     }
   ]
