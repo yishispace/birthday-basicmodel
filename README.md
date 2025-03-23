@@ -180,7 +180,7 @@
    - 可以添加新的子命令和参数
 
 3. **本地使用此工具**：
-   - 克隆仓库到本地：`git clone https://github.com/你的用户名/birthday-basicmodel.git`
+   - 克隆仓库到本地：`git clone https://github.com/pufeng-yi/birthday-basicmodel.git`
    - 进入目录：`cd birthday-basicmodel`
    - 安装依赖：`pip install -r requirements.txt`
    - 创建并配置`.env`文件
